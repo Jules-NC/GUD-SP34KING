@@ -55,12 +55,15 @@ alphabet = {'a':a,
             'z':z
             }
 
-phrase = 'Je ne suis pas fier de ce script.'.lower()
-nouvelle_phrase = ''
-for lettre in phrase:
-    if lettre in alphabet:
-        nouvelle_phrase += random.choice(alphabet[lettre])
-    else:
-        nouvelle_phrase += lettre
+while True:
+    phrase = input('>: ')
+    if phrase == 'quit':
+        break
+    nouvelle_phrase = ''
+    for lettre in phrase.lower():
+        if lettre in alphabet:
+            nouvelle_phrase += random.choice(alphabet[lettre])
+        else:
+            nouvelle_phrase += lettre
 
-print(nouvelle_phrase)
+    print(nouvelle_phrase)

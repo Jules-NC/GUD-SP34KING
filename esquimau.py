@@ -5,7 +5,7 @@ b = ['8', '13', '|3', 'ß', '!3', '(3', '/3', ')3']
 c = ['(', '¢', '<', '[', '©']
 d = ['[)', 'T)', '|)']
 e = ['3', '&', '€', 'є', 'ë']
-f = ['|=', 'ƒ', 'ph', '/=']
+f = ['|=', 'ƒ', '/=']
 g = ['6', '(_+']
 h = ['#', '/-/', '[-]', ']-[', ')-(', '(-)', ':-:', '|~|', '|-|', ']~[', ']-[', '}-{']
 i = ['¡', 'i', '1', '|']
@@ -62,8 +62,10 @@ while True:
     nouvelle_phrase = ''
     for lettre in phrase.lower():
         if lettre in alphabet:
-            nouvelle_phrase += random.choice(alphabet[lettre])
+            nouvelle_phrase += ' ' + random.choice(alphabet[lettre])
+        elif lettre is ' ':
+            nouvelle_phrase += '  '
         else:
-            nouvelle_phrase += lettre
+            nouvelle_phrase += ' ' + lettre
 
     print(nouvelle_phrase)
